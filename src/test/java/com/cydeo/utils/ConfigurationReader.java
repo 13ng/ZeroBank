@@ -12,8 +12,11 @@ static {
     try{
         FileInputStream file = new FileInputStream("configuration.properties");
         properties.load(file);
-    }catch (IOException e){
 
+        file.close();
+
+    }catch (IOException e){
+e.printStackTrace();
     }
 
 
