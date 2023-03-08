@@ -11,30 +11,30 @@ public class Driver {
 
 
 
-    private Driver(){
-
-    }
+    private Driver(){}
 private static WebDriver driver;
 
 
 public static WebDriver getDriver(){
 
-    String browserType = ConfigurationReader.getProperty("browser");
+
 
     if(driver==null){
+
+        String browserType = ConfigurationReader.getProperty("browser");
 
         switch (browserType) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 driver.manage().window().maximize();
-                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 driver= new FirefoxDriver();
                 driver.manage().window().maximize();
-                driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);
                 break;
             default:
                 System.out.println("There is no match browser");

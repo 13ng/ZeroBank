@@ -1,3 +1,4 @@
+
 package com.cydeo.runner;
 
 import io.cucumber.junit.Cucumber;
@@ -9,10 +10,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         plugin ="html:target/cucumber-reports.html",
-features = "src/test/resources/features",
+        features = "src/test/resources/features",
         glue = "com/cydeo/step_defenisions",
-        dryRun = true,
-        tags = ""
+        dryRun = false,
+        tags = "@wip"
 
 )
 
@@ -25,8 +26,6 @@ features = "src/test/resources/features",
 
 
 public class CucksRunner {
-
-
 
 
 
